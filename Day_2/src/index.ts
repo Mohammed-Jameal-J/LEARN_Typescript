@@ -38,14 +38,24 @@ console.log(c);
 function greetUser(name: string): string {
     return "Hello " + name;
 }
+console.log(greetUser("Alice"));
 
 // void 
-function logMessage(message: string): void {
+// function logMessage(message: string): void {
     
-}
-logMessage("This is a log message");
+// }
+// logMessage("This is a log message");
 
 function multiply(a: number, b: number, c: number=5): number {
     return a * b + c;
 }
 multiply(2, 3);
+
+// object 
+let username: { readonly id: number, name: string, phoneNumber?: number, add:(a: number,b:number)=>number} = {id: 1, name: "John", add: (a,b)=>a+b};
+username.phoneNumber = 1234567890
+console.log(username);
+console.log(username.add(2, 3));
+// readonly id: number;    cannot change
+// phoneNumber?: number;  optional
+// add: (a,b)=>number;    function type

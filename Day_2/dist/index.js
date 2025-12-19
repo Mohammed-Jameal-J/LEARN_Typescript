@@ -33,4 +33,25 @@ var Color;
 })(Color || (Color = {}));
 let c = Color.Green;
 console.log(c);
+// function 
+function greetUser(name) {
+    return "Hello " + name;
+}
+console.log(greetUser("Alice"));
+// void 
+// function logMessage(message: string): void {
+// }
+// logMessage("This is a log message");
+function multiply(a, b, c = 5) {
+    return a * b + c;
+}
+multiply(2, 3);
+// object 
+let username = { id: 1, name: "John", add: (a, b) => a + b };
+username.phoneNumber = 1234567890;
+console.log(username);
+console.log(username.add(2, 3));
+// readonly id: number;    cannot change
+// phoneNumber?: number;  optional
+// add: (a,b)=>number;    function type
 //# sourceMappingURL=index.js.map
