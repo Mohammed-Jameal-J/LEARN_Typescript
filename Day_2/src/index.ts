@@ -30,6 +30,22 @@ let tuple1: [number, string, boolean] = [1, "Hello", true];
 console.log(tuple1);
 
 //enum (first letter capitalized)
-enum Color {Red, Green, Blue, Yellow}
+enum Color {Red, Green, Blue}
 let c: Color = Color.Green;
 console.log(c);
+
+// function 
+function greetUser(name: string): string {
+    return "Hello " + name;
+}
+
+// void 
+function logMessage(message: string): void {
+    
+}
+logMessage("This is a log message");
+
+function multiply(a: number, b: number, c: number=5): number {
+    return a * b + c;
+}
+multiply(2, 3);
