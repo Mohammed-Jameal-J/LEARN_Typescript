@@ -30,6 +30,6 @@ let tuple1: [number, string, boolean] = [1, "Hello", true];
 console.log(tuple1);
 
 //enum (first letter capitalized)
-enum Color {Red, Green, Blue}
+enum Color {Red, Green, Blue, Yellow}
 let c: Color = Color.Green;
 console.log(c);
