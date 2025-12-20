@@ -81,3 +81,25 @@ type Product = {
 }
 const product: Product = {};
 product.log?.(); //undefined
+
+//nullish coalescing operator ??
+let count = 0;
+console.log(count || 10);//10
+console.log(count ?? 10);//0
+
+//type assertions
+let element = document.getElementById("myElement") as HTMLInputElement;
+element.value = "Hello TypeScript";
+
+//unknown type
+let userInput: unknown;
+userInput = 5;
+userInput = "Hello";
+
+//never type
+function throwError(message: string): never {
+    throw new Error(message);
+}
+throwError("This is a fatal error");
+
+console.log("new");
