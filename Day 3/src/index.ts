@@ -58,9 +58,26 @@ let userInfo = {
 // optional property chaining ? 
 console.log(userInfo?.profile?.name);
 
+// optional element chaining ?
 let users=[
     {id:1, name:"User1"},
     {id:2, name:"User2"},
 ];
 users[2]?.name; //undefined
 console.log(users[2]?.name);
+
+//optional element accessing in array of objects
+
+let userss=[
+    {name:"Jameal"},
+    {name:"Mohammed"}
+]
+userss[1]?.name
+
+//function optional chaining
+
+type Product = {
+    log?:()=>void
+}
+const product: Product = {};
+product.log?.(); //undefined
