@@ -95,6 +95,8 @@ element.value = "Hello TypeScript";
 let userInput: unknown;
 userInput = 5;
 userInput = "Hello";
+console.log(userInput);
+
 
 //never type
 function throwError(message: string): never {
