@@ -1,45 +1,81 @@
-//src/index.ts
-
-// TODO status enum 
+// TODO Status Enum
 enum TodoStatus {
-    PENDING = "Pending",
-    IN_PROGRESS = "In Progress",
-    COMPLETED = "Completed"
+    Pending = "pending",
+    Completed = "completed",
 }
 
-// todo type
+// TODO Type
 type Todo = {
-   readonly id: number;
+    readonly id: number;
     title: string;
-    description?: string;
     status: TodoStatus;
+    description?: string;
 }
 
-//in memory todo list
-let todos: Todo[] = [];
+// In-Memory Todo List
+const todos: Todo[] = [];
 let nextId = 1;
 
-const input=document.getElementById('todoInput') as HTMLInputElement;
-const addButton=document.getElementById('addBtn') as HTMLButtonElement;
-const todoList=document.getElementById('todoList') as HTMLUListElement;
 
-//function to render todos
-function renderTodos(): void {
-    todoList.innerHTML = '';
-    todos.forEach(todo => {
-        const li = document.createElement('li');
-        li.textContent = `${todo.title} - ${todo.status}`;
-        todoList.appendChild(li);
-    });
+const input = document.getElementById("todoInput") as HTMLInputElement
+const addBtn = document.getElementById("addBtn") as HTMLButtonElement
+const list = document.getElementById("todoList") as HTMLUListElement
+
+
+// Function for Complete Todo
+
+function completeTodo(id: number): void {
+    const todo = todos.find( item => item.id === id)
+
+    if (!todo) {
+        return;
+    }
+
+    todo.status = TodoStatus.Completed;
+    renderTodos()
 }
 
-// function to add a new todo
-function addTodo(title: string): Todo {
+// Function to render todos
+function renderTodos(): void {
+    list.innerHTML = ""
+
+    todos.forEach( todo => {
+        const li = document.createElement("li")
+        li.innerText = `${todo.title} - ${todo.status}`
+
+        if (todo.status === TodoStatus.Pending) {
+            const btn: HTMLButtonElement = document.createElement("button")
+            btn.innerText = "Complete";
+            btn.onclick = () => completeTodo(todo.id)
+
+            li.appendChild(btn) 
+        }
+
+        list.appendChild(li)
+    })
+    
+}
+
+// Function to add a new Todo
+function addTodo(title: string): void {
+    
     const newTodo: Todo = {
         id: nextId++,
         title: title,
-        status: TodoStatus.PENDING
+        status: TodoStatus.Pending
     };
-    todos.push(newTodo);
-    return newTodo;
+
+    todos.push(newTodo)
+
+    renderTodos()
+}
+
+
+addBtn.onclick = () => {
+    const value = input.value.trim()
+
+    if(!value) return;
+
+    addTodo(value);
+    input.value = "";
 }
