@@ -1,0 +1,23 @@
+class studentMark{
+    id: number;
+    name:string;
+    english:number;
+    math:number;
+    totalMarks?:number;
+
+    constructor(id: number, name:string,english:number,math:number){
+        this.id=id;
+        this.name=name;
+        this.english=english;
+        this.math=math;
+        this.totalMarks=0;
+    }
+    calculateTotal():void{
+        this.totalMarks = this.english + this.math;
+        console.log(`Total marks of ${this.name} is: ${this.totalMarks}`);
+    }
+}
+const student1 = new studentMark(1, "Alice", 85, 90);
+student1.calculateTotal();
+const student2 = new studentMark(2, "Bob", 78, 88);
+student2.calculateTotal();
