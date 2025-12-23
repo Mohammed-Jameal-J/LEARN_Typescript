@@ -22,3 +22,8 @@ const acc2 = new Account(2, "Jane Smith", 2000);
 console.log(acc2);
 acc2.deposit(750);
 console.log(acc2);
+
+console.log(typeof acc1);
+console.log(acc1 instanceof Account);
+
+
