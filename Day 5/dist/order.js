@@ -4,7 +4,7 @@ class Order {
     orderId;
     customerName;
     amount;
-    constructor(orderId, customerName, amount) {
+    constructor(orderId, customerName) {
         this.orderId = orderId;
         this.customerName = customerName;
         this.amount = 0;
