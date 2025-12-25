@@ -20,7 +20,7 @@ console.log(acc1);
 acc1.deposit(500);
 console.log(acc1);
 
-const acc2 = new Account(2, "Jane Smith", 200);
+const acc2 = new Account(2, "Jane Smith", 2000);
 console.log(acc2);
 acc2.deposit(750);
 console.log(acc2);
