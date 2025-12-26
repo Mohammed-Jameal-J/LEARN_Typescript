@@ -24,7 +24,7 @@ class BankAccount {
 const myAccount = new BankAccount("Alice", 1000, "Savings");
 myAccount.deposit(500);
 console.log(myAccount.getBalance()); // Accessing balance via method
-//parameter properties
+//parameter properties => shorthand for defining and initializing properties in the constructor
 class BankAccount2 {
     owner;
     _balance;
@@ -44,7 +44,7 @@ class BankAccount2 {
 const myAccount2 = new BankAccount2("Bob", 2000, "Checking");
 myAccount2.deposit(300);
 console.log(myAccount2.getBalance()); // Accessing balance via method
-//getter and setter
+//getter and setter => controlled access to private properties
 class BankAccount3 {
     owner;
     _balance;

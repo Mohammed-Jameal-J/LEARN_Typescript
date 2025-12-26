@@ -1,5 +1,5 @@
 "use strict";
-//index signature
+//index signature => [Key : type]: type
 Object.defineProperty(exports, "__esModule", { value: true });
 const user = {
     name: "John",
