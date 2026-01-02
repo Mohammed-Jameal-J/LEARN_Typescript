@@ -26,7 +26,7 @@ function printEmployeeRoll(employee: Employee): void {
 
 const d1 = new Developer("Alice", 80000);
 d1.salary();
-const m1 = new Manager("Bob", 95000);
+const m1 = new Manager("Bob", 9500);
 m1.salary();
 printEmployeeRoll(d1);
 printEmployeeRoll(m1);
