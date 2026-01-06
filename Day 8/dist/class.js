@@ -1,4 +1,5 @@
 "use strict";
+//instance writting any we can use generic types to make it type safe
 Object.defineProperty(exports, "__esModule", { value: true });
 class KeyValuePair {
     _key;
