@@ -1,3 +1,5 @@
+//instance writting any we can use generic types to make it type safe
+
 class KeyValuePair<K, V> {
     constructor(
         private _key: K,
